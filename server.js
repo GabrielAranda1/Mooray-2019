@@ -7,6 +7,10 @@ const movies = require('./routes/api/movie')
 const directors = require('./routes/api/director')
 const performers = require('./routes/api/performer')
 const users = require('./routes/api/user')
+const posts = require('./routes/api/post')
+const reviews = require('./routes/api/review')
+const lists = require('./routes/api/list')
+const reports = require('./routes/api/report')
 
 const db = require('./config/db')
 const app = express()
@@ -45,6 +49,10 @@ app.use('/api/movies', movies)
 app.use('/api/directors', directors)
 app.use('/api/performers', performers)
 app.use('/api/users', users)
+app.use('/api/posts', posts)
+app.use('/api/reviews', reviews)
+app.use('/api/lists', lists)
+app.use('/api/reports', reports)
 
 const port = process.env.PORT || 5000
 

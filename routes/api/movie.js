@@ -20,7 +20,6 @@ const validateNewMovie = require('../../validation/validateNewMovie')
 router.post('/new', (req, res) => {
 
     const { errors, isValid } = validateNewMovie(req.body)
-    console.log(errors, isValid)
 
     // check validation
     if (!isValid) {
@@ -35,7 +34,6 @@ router.post('/new', (req, res) => {
             errors.name = 'Movie already exists.'
             return res.status(400).json(errors)
         } else {
-            console.log(movie)
             Movie.create({
                 movie_id: uuid(),
                 name: req.body.name,
@@ -175,7 +173,6 @@ router.post('/:movie_id', (req, res) => {
                         }
                     })
             }
-            console.log(req.body.director_id)
             let director_list = []
             director_list = req.body.director_id.toString().split(',')
 
@@ -324,7 +321,6 @@ router.post('/:rate/:movie_id/:user_id', (req, res) => {
 
                     sequelize.query("SELECT COUNT(*) as rate FROM movie_rate WHERE movie_id =?", { replacements: [req.params.movie_id], type: sequelize.QueryTypes.SELECT }).then(rate => {
                         sequelize.models.movie_rate.sum('rate', { where: { movie_id: req.params.movie_id } }).then(sum => {
-                            console.log(sum, rate[0].rate)
                             Movie.update({
                                 rate: (sum / rate[0].rate).toFixed(2)
                             }, {

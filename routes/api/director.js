@@ -1,9 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
-const keys = require('../../config/keys')
-const passport = require('passport')
 const uuid = require('uuid/v4')
 
 const Director = require('../../models/Movies').Director
