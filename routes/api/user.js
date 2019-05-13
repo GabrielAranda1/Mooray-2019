@@ -31,7 +31,7 @@ router.get('/login/:user_id', (req, res) => {
             jwt.sign(
                 payload,
                 keys.secretOrKey,
-                { expiresIn: 3600 },
+                { expiresIn: '24h' },
                 (err, token) => {
                     res.json({
                         success: true,
