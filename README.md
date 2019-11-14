@@ -27,4 +27,5 @@ In this project there is also an admin dashboard where they are able to:
 * Add new entities like actors and directors
 * Add new movies to the catalog
 
-##
+## FrontEnd Repo
+https://github.com/GabrielAranda1/Mooray-2019-FrontEndServer
