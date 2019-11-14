@@ -6,7 +6,7 @@ It was developed to a Software Engineering Lab Class/Graduation project from Jan
 ## Built With
 * Node.js - Back-end
 * React.js - Front-end 
-* Sequelize.js - Database connection and managment 
+* Sequelize.js - Database connection and management 
 * Chart.js - Dashboards and charts
 
 ## Functionalities
